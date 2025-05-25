@@ -1,0 +1,1 @@
+# Plagiarism-checker-for-n-handwritten-docs
