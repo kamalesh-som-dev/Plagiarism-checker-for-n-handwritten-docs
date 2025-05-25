@@ -1,0 +1,211 @@
+
+1)
+IT18305
+Database systems
+Mythra.M
+cat No 3
+B Tech IT-B
+semester 3
+Part
+1) Mean Time to failure - 100000hours
+Mean time to repair - 10hours
+Mean Time to data loss - 1000002
+2 1 1 00
+3 Advantage
+1. Data Retrieval:
+computer- based systems provide enhanced
+data retrieval techniques to retrieve data store In
+tiles a n e asy and efficient way
+2.E diting.
+It is easy to edit any information stored
+in computers ion form of files.
+specific application programs or editing softwar
+can be used for this purpose.
+Disadvantages:
+1. DataRedundancy:
+is possible that the s ame information
+may be It duplicated in different files. This leads
+to data redundancy
+2. Data Inconsistency.
+Because of data redundancy, it is
+2
+possible that data may not be inconsistent state.
+5)
+Map database Management systems:
+software programs designed to efficiently
+store and recall spatial information
+widely used in localization and navigation
+especially in automotive applications.
+when designed well, a map database enables
+the rapid indexing and lookup for a large amount
+of geographic data.
+2)
+Dr mees CLASS be Database indexing Hash tables
+may also be used as disk - based data structures
+and database indices. Although B - trees are
+More popular in these applications.
+4)
+Mysqb enables retrictions to be placed on rease of
+previous passwords. to establish password -reuse
+policy globally, use the password- history and
+password, reuse - interval system variables.
+2
+Part - B
+6b.
+Data consistency - challenges
+Data discripancy occurs when the data in the
+target deviates from the source database. the extent
+to which the data deviates depends on various factors.
+Using products that replicates data reliably,
+there remain potential causes of data discrepancy. If
+the go a of database is to be strictly consistent
+with the source, then it has to put processes and
+policy to ensure it;
+CAUSES:
+a) Migration
+effect: kinds of migration tools are database employed
+Different initial wad of the target
+from data by the migration tools and replication products
+to facilitate replication. the Difference in configuration for handling
+can result in data discripencies.
+b) Lift and shift workload to cloud:
+the world is moving towards cloud, the
+lift and since shift of database workload from on premises
+to cloud is the need today.
+4
+c) Replication Latency
+with asynchronous replication, there will be
+short lag between changes to the source database and
+delivery of those changes to the target.
+Failure to meet the maximum Latency requirement,
+however can potentially violate service level agreement
+levels or data compliance requirements.
+d)user errors:
+Target databases are often created to offload query
+processing from the source database. this enables off
+operational reporting without impacting the application
+running on the source database
+Data consistency requirements
+High speed, low impact data comparisons.
+support for heterogeneous databases.
+compatability for handling large data volumes
+Minimally intrusive
+Data security
+easy to use, understand configure, deploy and
+diagnose.
+Data comparison reports for auditing purposes.
+5
+part-c.
+7a.
+Fault tobert service using replicated state machines
+key requirements to mak be service fault tourent
+Eg: luck manager, key value storage system,
+-
+State machines are powerful apprach to creating
+such services,
+A state machine
+has a stored state and received inputs
+Makes state transitions on each input and may
+output some results
+Transitions and output must be deterministic.
+A replicated state Machine is a state machine
+that replicates on multiple nodes.
+All replicas must get exactly the same input
+Replicated log! state machine processes only
+committe inputs
+Even if some of the nodes fail, state and output
+can be obtained from other nodes.
+uses of Replicated state machine:
+It can be used to implement wide variety of
+services
+Inputs can specify operations with parameters
+But operations must be detuministic
+Result of operation can be sent from any replica.
+Gets executed when log record is committed
+in replicated log.
+6
+usually sent from leader, which knows which
+part of log is committed.
+Example: fault toterant lock manager
+state lock table.
+operations: lock req. / lock releases.
+output: grant or rollback req. on deadlocks.
+centralized implementation is made fault tolerant
+by simply running it on a replicate state machine
+Fault tolerant key -value store
+State key -value storage state
+operations: get () and put () are first logged.
+operations executed when the log record is in
+committed state
+Google spanner uses replicated state machine to
+implement key - value store.
+Data is partioned of and each partition is
+replicated across multiple nodes.
+Replicates of partition from a Paxos group
+with one node as leader
+operations initiated at leader and replicated
+to other nodes.
+7
+8b.
+Deadlock handling:
+common techniques include that each site keeps a local
+wait for graph. The nodes of the graph correspond to
+all the transactions that are currently either holding or
+requesting any of the items Local to that site.
+For example, system consists of 2 sites, each
+maintaining its local wait- for graph.
+S1
+S2
+T1
+T2
+T4
+T2
+T5
+T3
+T3
+T2 and T3 appear in both sites, indicating
+that they are requested items in both sites.
+when Transaction T1 on site S1 need a resource in
+S2, it sends a message of request to site2. If the
+resourse is held by transaction Tj, the system
+inerts and edge Ti Jj in the local wait for
+graph of site S2.
+If any local wait for graph has a cycle, then
+deadlock has occurred. Also no cycles in any of the
+wait for graphs doesn't mean that there are no
+deadlocks.
+for example,
+T1
+T
+2
+T
+4
+T
+5
+T3
+8
+Each wait - for graph is acyclic nevertheless, a deadlock
+exists in the system be cause the union of the total
+local wait-for graph contains a cycle as above.
+In centralized deadlock detection the system constructs
+and maintains a global wait-for graph, in a single site:
+the deadlock-detection coordinator.
+False cycles in global wait for graph.
+SI
+S2
+T1
+T1
+12
+T3
+Coordinator
+TI
+T2
+13
+suppose that T2 releases the resource that is
+holding in site S1, resulting in the deletion of edge T1-1 T2
+in S2. The Transaction then requests a resource held by
+T3 at site T1, resulting in the addition of the edge
+T2
+T3 in S2.
+Deadlock recovery May be initiated, although
+no deadlock has occured.

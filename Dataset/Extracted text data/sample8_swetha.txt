@@ -1,0 +1,368 @@
+
+1
+11/2/27
+DATABASE
+SWETHA'S
+IT-B'
+SYSTEMS
+DBMS
+IT18305
+CAT- 3 EXAM.
+III SEM
+2127200801092
+PART-C
+16 marks:-
+8 b)
+DEADLOCK HANDLING:-
+Deadlock prevention may result in
+unnecessary waiting and rollback. If we allow
+deadlocks to occur and rely on deadlock detection,
+the main problem in a distributed system is
+deciding how to maintain the wait -for graph.
+consider the following two transactions
+and history , with item X and transaction T, at
+site 1 and item y and transaction T2 at site 2
+T1 write (x)
+T2:
+write (x)
+write (Y)
+write (y)
+X-lock on X
+write (x)
+X tock on Y
+write (Y)
+wait for X lock on X
+wait for X -lock on y
+Result:- Deadlock which cannot be detected
+locally at either site.
+DEADLOCK DETECTION:-
+In the centralized deadlock- detection
+approach, a global wait- for graph is
+constructed and maintained in a single site;
+the deadlock - detection co-ordinator.
+Real graph:- Real, but unknown, state
+of the system.
+Constructed graph:- Approximation generated
+by the controller during the
+execution of its algorithm
+The Global wait-for graph can be
+constructed from:-
+a new edge is inserted in or removed
+from one of the local wait - for graphs
+a number of changes have occured
+in a local-wait -for graph.
+the co - ordinator needs to invoke
+cycle -detection
+If the co-ordinator finds a cycle, it
+selects a victim and notifies all sites The
+sites roll back the victim transaction.
+2
+LOCAL AND GLOBAL WAIT-FOR GRAPHS: -
+Ti
+T2
+T2
+T4
+LOCAL
+T5
+T3
+T3
+site S1
+site S2
+T1
+T2
+T4
+Global
+T5
+T3
+Example:-
+WAIT -FOR GRAPHS FOR FALSE CYCLES:-
+Initial state:-
+T1
+T1
+T2
+T3
+S,
+S2
+T
+T3
+T2
+co-ordinator
+FALSE CYCLES:-
+uppose that starting from the state shown
+in figure:- :-
+1. T2 releases resources at S,
+resulting in a message remove T,
+T2
+message from the Transaction Manager at site
+S, (to the co-oldinator)
+2. And then T2 requests a resource
+held by T3 at site S2.
+resulting in a message insert T2 T3
+from S2 to the co-ordinator
+suppose further that the insert message
+reaches before the delete message
+this can happen due to network
+delays
+The co-ordinator would then find a false
+cycle
+T1
+T2
+T3
+T.
+The false cycle above never existed in
+reality
+False cycles cannot occur if two - phase
+locking is used.
+3
+Distributed dead locks :-
+Unnecessary roll backs may result
+when deadlock has indeed occured
+and a victim has been picked, and
+meanwhile one of the transactions was
+aborted for reasons unrelated to the
+deadlock.
+Due to false cycles in a global
+wait-for graph; however likelihood of false
+cycles is low.
+In the distributed deadlock- detection
+approach, sites exchange wait-for information
+and check for deadlocks.
+Expensive and not used in practice
+complicated/1
+E
+PART - B.
+8 marks:- -
+6 b)
+CHALLENGES IN MAINTAINING DATA CONSISTENCY:-
+Data discrepancy occurs when the
+data in the target database derivates from
+the source database. The extent to which
+the data depends on various factors, some of
+which may be intended and others unintended
+some of the potential causes for data discrepancy
+are described below:-
+Migration errors:-
+Different kinds of migration tools are
+employed to facilitate the initial load of the
+target databases before replication can begin
+Differences in configuration for handling
+data by the migration tools and replication
+products can result in data dispen discrepancies.
+Lift and shift workload to cloud:-
+Since, the world is moving towards.
+clouds, the lift and shift of database workload
+from on -premises to cloud is the need of today's
+IT world. Orade golden gate helps moving
+the work load, the data-consistency access on-
+premises and cloud data centers and data
+compliance assurance is the top challenge in
+hybrid cloud scenario
+Differences in source and Target :-
+-
+Differences in source and target data-
+base configuation, for example ; different encodings,
+locales, endianness or database versions can
+cause subtle discrepancies to happen during
+migration.
+Instantiation errors :- -
+Before migration or replication can begin,
+the target databasee will need to be instantiate
+with the correct schema and constraints
+Fail urre to do will result in the
+source and target being out of sync.
+Configuration error :-
+Improper and unintended configuration
+of replication products cause discrepancies. in
+This type of discrepancy doesn't show up the
+replication logs, since from the replication
+products perspective, it is performing as
+configured. This may prevent Q A tests from
+detecting the issues as well
+5
+User errors:-
+Often target databases are created to
+offload quary processing from the source
+database. This enables rich operational
+reporting without impacting the applications
+on the source database.
+The challenges are addressed by
+"CAP theorem".
+CAP THEOREM:-
+We need to know the three properties
+of a system :-
+consistency
+Availability
+Partitions.
+CAP theoren says that "you can have
+atmost two of these three properties of
+anysystem"
+Very large systems will particition
+at some point
+choose any one of consistency or
+availability
+Traditional database choose consistency
+Many web applications choose
+availability.
+Except for specific parts such as
+Order processing
+Latency is another factor.
+Many applications choose to serve
+potentially stable data to reduce latency
+PARTE
+7a 16 marks:-
+7a)
+Forrent protecol enables de centralization
+of its resources by making use of peer-to-
+peer network.
+A small torrent file is created to
+represent a file or folder to be shared.
+Users can download the required files
+using a unique magnet link associated
+to each file on torrent.
+In order to learn the Internet location
+of any peers which may be sharing pieces, named
+the client connects to the trackers
+in the torrent file, achaines a similar
+result through the use of distributed
+hash tables.
+The technology to ensure fault-toleran tolerance
+is Fault-tolerant services by Replicated
+6
+state machines
+Key requirement: Make a service
+fault tolerant
+Example: Jorrent / lock manager, etc
+state machines are a powerful
+approach to creating such services.
+A state machine :-
+has a stored state and received inputs
+makes state transitions on each input
+and may output some results
+Transitions and outputs must be
+deterministic
+A replicated state machine is a state machine
+that is replicated on multiple nodes.
+All replicas must get exactly the
+same inputs.
+Replicated log! state machine processess
+only committed inputs!
+E ven if some of the nodes fail, state
+and output can be obtained from other nodes
+Replicated state Machine :-
+client
+YET
+Consensus
+x
+3
+x 3
+x 3
+Module
+y7
+y7
+y 7
+23
+23
+23
+Log
+Log
+Log.
+xa3
+yeayer
+1/26/2023
+yea
+47
+Leader
+Follower
+follower
+uses of Replicated State machines :-
+implement wide variety of services.
+Replicated state machines can be used to
+Inputs can specify operations with tic parameters
+But operations must be determinis
+Result of operation can be sent from
+any replica
+usually gets executed only when
+log record is committed in replicated log
+Usually sent from leader, which knows
+which part of a log is committed
+Example:- Fault - tolerant lock manager
+state lock table
+Operations: lock requests and lock releases
+Output: grant or rollback requests on
+deadlock
+4
+Centralized implementation is made
+fault tolerant by simply running it on
+a replicated state machine.
+PART-A.
+smarks:-
+3.
+Advantages:-
+1. Data Retreinal :-
+Computer - based systems provide enhanced
+data retrival techniques to retreive data
+stored in files in easy and efficient way. -
+2 Editing : :-
+It is easy to edit any information
+stored in computers in form of files.
+special application programs or editing
+software can be used for this purpose.
+D isadvant ages:-
+1. Data Redundancy:-
+It is possible to that the same
+information may be duplicated in different results files,
+this leads to data redundancy which
+in memory wastage.
+2. Data Inconsistency :-
+Because of data redundancy it
+is possible that data may not be in
+consistent state
+8
+1
+for the two disk mirrored case, we
+assume A disk and B disk In order to lose
+data, A and B need to be failed at the
+same time.
+If A is already failed and within
+1,00,000 hours, B disk will fail, then data
+will be lost
+The other case is B is already failed and
+within 100,000 hours A will fail and then
+data will be lost
+for the first case, A disk is failed
+for 100 hours every 100,000 hours, so in
+order to make B to fail, it will need
+1,00,000 2 hrs
+100
+Because the other case, the time is
+reduced
+to 1,00,000
+(2x100)
+SQL server supports storing and
+5.
+quarying of grop. geospatial data, that is,
+location data referrenced to the earth.
+Common models of those data are the
+planar and geodetic co-ordinate systems
+The main distinction between these two
+systems is that the latter takes int Q
+account the currature of the earth
+SQL server supports geometry and geography
+which correspond to the planar and geodetic
+models
+2.
+Database Indexing:-
+Hash tables also be used as disk -
+based data structures may and database indices
+although B-trees are more popular in these
+applications.
+In multi-node database systems, hash
+tables are commonly used to distribute
+rows amongst nodes, reducing networks
+traffic for hash joins
+4
+Mysal enables restrictions to be placed on
+reuse of previous passwords.
+To establish passwold-rouse policy
+globally, use the passwoid history and
+password- reuse - internal system variables

@@ -1,0 +1,287 @@
+
+SANTHOSH.M
+IT-B
+2127200801078
+IT 18305 - DATABASE SYSTEMS
+CAT-3 (IIIrd Semester)
+11.02.22
+Part - A
+3)
+Advantages for stoling multiple relations in a single file:
+* complex structures can be implanented through the DBMS,
+thus increasing F performance.
+Disadvantages of storing multiple relations in a single file
+* Increases the singe and complexity of the DBMS.
+D
+For the two disk mirrored use we assume A disk and
+B disk In order to lose data, A and B need to be footed
+failed at the same time. If A is already failed and within
+1000000 hours B disk will fail, then data will be lost The
+other case is B is already failed and within 100,000 hours A
+will fail, and them data will be lost
+If the mean time to failure of a single disk is 100000
+hours and the mean time to repair is 10 has then the
+mean time to dola loss is C109; Doo ^ 2) 2-€ 100.
+5)
+Map database.
+Map database management systems all software proframs designed
+to efficiently store and redl spatial information.
+is)
+2)
+B+ trees can be used to brate block containing the
+search key.
+we choose B+ tree because it is a self- balaning tree data
+structure that maintains data and allows searches, sequential
+auess, instructions and deletions.
+Part- -B
+6)b) Challenges in Maintaining Data Consistently
+Data discryancy owurs when the data in the target
+database devites from the source database The extent to
+which the data deviates depends on various factors.
+Even when using products that replicate data data reliebly,
+such as Oracle, there remains potential causes of data
+discrepancy If the good of the
+Migration Errors
+Different kinds of miglation tools are employed
+to facilitate the initial load of the target databases before
+replication can begin. Differences in configulation for handling
+data by the miglation tools and repliction products can
+result in data discrepancies.
+Lift & shift workload to Cloud
+Since the world is moving towards the lord, the lift
+& shift of database from on premises to lord is the held of
+today's IT world.
+Difference in Source and Target
+Diff in source and target database configination,
+for example different modings, Cordes, Indianess ol dobbese
+versions can cause subtle discrepanies to happen during miglation
+and replictions.
+Instantiation Errors
+Before migration or replication can begin, the target databases will
+need to be instantized with the correct scheme and constraits
+Configilation Errors
+Improper and unintended configuration of repliction products
+Can cause discrepansies.
+Gaps in Repliction
+Although repliction is hobled between source and target
+databases and is working perfectly well, there are instances where
+data insetted on the source will not be replaced.
+Replication Latery
+inbetwen changes to the source database and delivery of dose
+with asymehranous replidition, there will be a sholt log
+changes to the farget.
+user errors
+often target databases are reded to offtood query
+processing from the soure detabage This hobly rich operation
+reporting without impacting the applications running
+Application errors
+Applications that use target data bases can
+potentially change dota due to famly Rogic aswell as,
+application you upgrades.
+The technology requirements for manging data consistency are:
+High speed, low impact deta comparisons.
+Support for heterogenous databases.
+Capability for handling large data volumes.
+Flexible options for manging data comperisons.
+Support for live databases with outantly chaping data.
+Minimally intersive
+Comparison of only changed data in countinous replication
+Comparison of huge table through automated & manual
+partitioning
+x Data compersion reports for auditing purposes
+x zero downtime of source and target systems.
+x Capability to identify data incont inconsistency
+Low impact on hardwide and network resources.
+Flexible regorting for verying & roles and access levels.
+XData Security
+x Easy to use, understand configure deplay and diagnis
+Part C
+Day
+Fault Tolerant Services using Replicated State Machines
+X Key requirement make a service fault tolerant.
+Eg : lock manager, key - value storage system,
+servies. State machines are a powerful approach to creating such
+*
+A state mahine
+*
+& Has a stored state, and receives inspects.
+results Makes state transactions on each input, and may output some
+Transactions and output must be deterministri
+* A replicated state machines is a state machine that is
+replicted on multiple nodes.
+All replies must get exactly the same inputs
+inputs Replisted log. State machine processes only committed
+obtained from other nodes.
+Even if some of the holes fail, state and output can be
+Replicted State Machine
+* Replicated state onestine based on replicted los
+X Example commands assign values to varables
+thint
+yo?
+consentus
+xx
+Conserves
+x 3
+module
+y
+module
+y
+7
+23
+2
+3
+Log
+Log
+XELZ<
+xaz
+yeh
+yky
+ZE2
+X-2
+y.
+xx3
+you
+ye
+of
+leader
+follower
+consensous
+x3
+module
+yr
+23
+Leg
+xt2
+ZE2
+nk3
+yea
+yD7
+follower
+Leader dalaes los record committed after it is reglisted as a
+majority of nodes.
+Uses of Replicted State Machines
+Replicated state machines can be used to implement wide
+variety of services
+Inguts can specify operations with palameters.
+But operations must be deterministic
+Result Gets of operation cambe sent to from any replica.
+in replicated log.
+used excented only when log record is committed
+Example fault tolerant lock manger
+state lock table.
+operations : lick requests and lock releases
+Output : grant, or rollback requests on deadlock
+centralized by implementation is made fault du tolerant
+simply running it on a replicated state machine.
+Fault tolerant key value- - store
+State: key value storage state
+Operations : get (s) and put is are first logged
+Google spanner used uses replicated state machine to
+implement key value store.
+multiple hodes.
+Data partitioned, and each partition is replicated across
+8)b) Deadlock Handling
+The deadlak handling prevention and deadlak
+deteition algorithms can be used in a distrubtited system,
+provided that modifications are made. For example, we can
+use the tree proterol by defining a global tree among the
+system data items. Similarly, the timestamp. - ordering approach
+could be directly applied to a distributed environment.
+Deadlak prevention may result in unneressery waiting
+and rollback Furthermore, certain deadlok -prevention
+techniqies may require more sites to be involved in the
+execution of a transaction than would otherwise the case.
+If we allow deadlocks to ourh and rely on deadhrk detention,
+the main problem in a distributed system is dending how to
+maintain the wait- -for graph.
+T1
+T
+2
+125
+T5
+T3
+T3
+site S1
+site S2
+common techniques for dealing with the issue require that
+each site keeping a loal wait for graph. The nodes of the
+graph correspond to all the transations Cloral as well as
+non -load) that are currently either holding or requesting
+any of the items local to that site For example
+the above diagram deputs a system courding consisting of
+two sites, each maistaining its local wait-for graph note that
+transactions T2 and T3 appear in both graphs, indicating that the
+transactions have requested items at both sites.
+These lord wait -for graphs are constructed in the used
+manner for lord transactions and data items. when a
+transaction Ti on site S1 needs a resource in site S2, it
+sends a request message to site S2 If the resource is held
+by transaction Ti, the system inserts an edge Ti
+Ij in the
+loud wait -fer graph of site S2. clearly, if any lord wait
+for graphs has a cycle, dealock has owerd On the other hand,
+the fact that there are no cycles in any of the lord wait-
+for graphs does not mean that there are ho cycles in any
+of the lord wait for graphs does not mean there are
+no dealorks. Each wait -for graph is anythie; neverthless, a
+deadlak exists in the system because the union of the
+loud wait-fo graphs contains a cycle.
+In the centralized deadlack approach, the system construte
+and maintain a global wait -for graph in a single site: the
+deadlock-deteition coordinator. Since there is communication
+delay in the system, we must distinguish between the two types
+of wait for graphs The real graph describes the real but
+unknonown state of the system at any insurance
+instance in time, as would be seen by am amnishent
+observer. The constructed graph is an
+approximation generated by the controller during the
+execution of the controller's algorithm
+Ti
+2
+T4
+T5
+3
+T1
+TI
+T2
+T3
+S,
+S2
+1i
+T3
+T2
+coordinator
+False cycles in the global wait for graph
+The global watefor graph can be reconstructed or updated
+under these conditions :-
+*
+the wait-for graphs.
+Whenever lord a new edge inhected in or removed from one of
+Periddically when a number of changes have ownered in
+a lord wait-for graph.
+* whenever the coordinator needs to mioke the lifele - detection
+a gorthin
+when the coordinator makes the deadlock - detriens detection
+algorithen, it searches its global graph If it finds a cycle,
+it selects a victim to be rolled back The coordinata must
+notify all the sites that a particular transaction has been
+selated as victim The sites in turn, roll back the
+victim transaction.
+This scheme may produce unneressary rollbacks if :
+False Cycles exists in the global wait-feer graph. Asan
+illustration, consider a Snapshot of the system represented by the
+loral wait- for graphs. Suppose T2 releases the resource that it
+is holding in sites, resulting in the detection of the edge
+T1
+T2 in S1. Transaction T2 then requests a resource held
+by T3 at site S2, resulting in the addition of the edge T2 7 T3 in
+S2 If the hisert T2
+T3 message from S2 arrives before the
+remove T1 2T2 message from Si, the coordinator may discover the
+false cycle T1 2 T2
+T3 of ta the insert. Deadark recovery may
+be initiated
+*
+A deadlock has indeed ownered and a viction has bear
+picked, white one of the transations was abouted for reasons
+unrelated to the deadlork.

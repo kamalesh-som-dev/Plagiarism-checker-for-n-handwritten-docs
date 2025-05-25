@@ -1,0 +1,351 @@
+
+CAT-3
+2127200801094
+Thanigaikelann
+IT 18305. Database Management
+INT-B
+system
+8 p
+The deadlock - prevention and deadlock. detection
+algrithms can be used in a distributed system,
+provided that modification are made.
+FBI example, we can use the tree protocol by
+defining a global tree among the system data items.
+similarly, the tirestamp - ordering approach could be
+directly applied to a distributed environment
+Deadlock prevention May result in unnecessary
+waiting and rollburs furthersta, certain dealback
+preventson technique May requires more site to be
+involved in the execution of a transaction than
+would otherwise be the case.
+If the allow deadlocks to occur and
+on deadlock detection, the Main problem in a
+distributed reply system is deciding how to maintain
+the wait for graphs.
+T1
+T2
+T2
+T4
+T5
+T3
+T3
+COMMON techniques for dealing with this issue
+require that each site keep a local wait - for graph
+The node of the graph correspond to all the transactions
+(local as well as noulocold that are Currently either
+holding or requesting any of the items local to that
+site.
+Example: depices a system consisting of two sites
+each maintaining its local wait - for graph Note the
+transactions T2 and T3 appear in both graphs, indicating
+that the transactions have requested items as
+both sites
+when a transaction Ti on site S, needs
+a resource in site S2, it sends a request Message
+to site S2. If the resource is held by transaction
+Tj, the system insert an edges Ti
+T in the local
+wast- for graph of site S2
+In the centralized deadlock detection approach
+the system constructs and maintains a global
+wart-for graph in a single site the deadlock-detection -
+coordinator. since there is communication delay in
+the system, we must distinguish between two types
+of wait - for graphs. The real graph describes the
+real but unknown state of the system at any
+instance in time, as would be seen by an orniscient
+observer.
+T1
+T1
+T2
+T3
+S1
+S2
+T1
+T2
+T3
+coordinator
+The global wait for graph can be reconstruct
+ted or updated under the conditions.
+-
+whenever a new edge is inserted in or
+removed from one of the local wait for graphs
+periodically, when a number of changes
+have occurred in a local wait for Draph.
+whenever the coordinator needs 10
+invoke the cycle- detection algorithm
+False cycles exist in the global most for graph
+As am illustration, consider a snapstor of the
+system represented by the local wait for graph
+suppose that T2 redease the resource that is
+holding in site S1, resulting in the delection of the
+edge T,
+T2 in S1. Transaction T2 then request a
+resource held by T3 at site S2, resulting in the
+addition of the edges T2 T3 ins, 2. If the insert
+T2
+T3 message from S2 arrius before the remone
+T,
+T2 Message from S., then coordinator May discover
+the false cycle T, T2 Is after the insort.
+A deadlock has indeed occured and a
+victim has been picked, while one of the transactions
+was aborted for reasons unrelated to the deadlock
+For example, suppose that site S, decides to about T2.
+At the same time, the coordinator has discovered
+a cycle and has picked T3 as a victim Both T20 and
+T3 are now rolled back, although only T2 needed f 0
+be rolled back
+part-
+6 b
+Executive overriew
+The requirement for high data availability
+and the need to access data or hear 24/7/365 without
+performance degradation and service interruption has
+created the need for having redundant distributed
+copies of the data However in today's complain It environment
+where data increases in light speed, maintaining data
+consistency across distrib buted copies of data is
+challenging and the possibility of - data discripancy
+is an unfortunate reality
+oracle gddengate veridata provides an easy -
+to - use yet powerful solution for identifying out of synch
+data before it negatively impacts the business. Deployed
+together with the oracle Goldengate real-time - data
+replication product or separately, oracle goldengate veridada
+data consistency is maintained across databases
+ensures
+challenges in maintaining Data consistency
+before we discuss the
+requirements for the solution that helps Manage data
+consestancy across database, we need to understand
+the common causes of data discrepancies in an enterpre
+Data discrepancy occurs when the
+data in the target database deviates from the
+source database The extent to which the data
+deviates depends on various fallors, some of which May
+be intended and others unstended
+some of the potential causes of
+data Discripancy are described in the following
+sections
+migration error
+Different kind of Migration tools are empty
+to faciliate the initial load of the target databa
+before replication can begin Differences in configurate
+for handing data by the migration tools and replica
+products can result in data discrepancies
+For example. a migration tool May use and the
+replication product May use Null" when the value of
+the column is known.
+lift & shift worload to cloud
+since the world is Moving towards
+cloud, the lift & shift of database workload from on
+premises to cloud is the need of todays IT world
+racle gddengate helps moving the work load, the
+data consistency across on - premises and cloud data
+Difference in source and Target
+Different including, locates, endianner
+or database versions can Cause rubte discrepines
+to happen during migration and replication
+cross
+repre migration of replication can begin
+the target database will need to be instantiated
+with the correct schema and constraints Failure
+to do so will result in the same and target
+being out of sync.
+configuration Errors:
+Improper and untanded configuration
+of replication products can cause descriptions This
+type of discroparing doesn't show up in the replicte
+logs since from the replication product perpective
+it is forming as configured.
+Replication latency
+with assynchranous replication there
+well be a short lag between changes to the
+service database and delivery to those change
+to the target Failure to Meet the Massirum
+latency requirement however can potentially violate
+service level agreement levels or data compriance
+requirements,
+user errors:-
+often target databases are treated to
+offload Quary processing from the source database
+This enable rich operational reporting without
+impacting the application running on stone source
+database
+Requirements for managing Data consistency :
+high speed low impact data comparisons
+support for heleroganoous databases
+capability for handling large data
+volumes flexible options for Managing data compares
+monimally intrusive
+support for line databases with
+constantly changing date
+comparison of only changed data
+in continous replication.
+comparison of huge table through
+automailed and Manual partiering
+Data comparison reports for auditing pwg
+pata security
+Easy to use, understand Configure, deploy
+and diagness.
+7 a)
+Fault tolerand servites using replicated state
+Machine
+Key requirement : Make a service fault tolerant
+E.g : lock Manager, They - value system
+state machines are a powerful approach to
+creating such services
+A state Machine
+- Has a stored state, and receives input
+-
+makes state transitions on each input
+and may output some results
+- Transition and output must be deterministic
+A replicated state Machine is a strave Machine
+that is replicated on Multiple nodes.
+- All replicas must get exactly the same inputs
+- Replicated log! state Machine processes
+only committed inputs
+- Even if some of the nodes fail, state
+and output can be obtained from other hodes.
+Replicated state machine
+Replicated state Machine based on replicated dog
+Example commands assign values to variables
+client
+concersus
+module
+consensus
+consenses
+n 3
+Module n 3
+y
+7
+Module x 3
+y
+7
+y
+7
+z
+Log
+3
+log
+Z
+3
+=
+3
+x<
+log
+y-4
+y<- 7
+x< 2 22-2
+x
+yea Ye-
+pass
+2
+24
+f
+Leader
+follower
+follower
+Leader - declares log record committed after it
+replicated at a Majority of nodes, update of state
+Machine at each replica happens only after log record
+has been committed
+uses of replicated state Machine
+Replicated state Machines Can be used is
+implement wide variety of servites
+input can specify operations with parameters
+- But operation Must be deterministin
+- Result of operation can be sent from any
+replica
+crets executed only when log records
+is committed in replicated log
+usually sent from leader which Knows
+which part of log is committed
+Example: fault towart lock manager
+state lock table
+operations: lock requests and lock realss
+#
+output grant, or rollback requests
+on deadlock
+centralized implementation is made
+fault tolerant by simply running it on a replicated
+state machine.
+Fauld dolerent Key - value store
+state They - value storage state
+operations: get() and put() are first
+logged
+operations executed when the log round
+is in committed state
+note even gde operations need to be
+processed via by
+Google spanner uses replicated state
+Machine to implement They value store
+Data is partitioned and each portution
+is replicated across multiple nodes.
+Peplicas of a partition form a samed group
+with one node. as leader
+operations initiated at leader and
+replicated to other hoder
+part-A
+3.
+Advantages of storing Multiple relations in a single
+file:
+complex structures can be implemented
+through the DBMS, thus increasing performance
+Disaduantages of storing Multiple relation in a
+single file
+Increases the size and complexity of the DBMS
+I
+For the two dirk mirrored care, me assume
+A disk and B disk In order to lose data; A
+and B need to be failed at the same time. If A
+is already failed and within 100,000 hours
+B disk will fail, then data will be lost. The
+other case is B is already failed and within
+100,000 hours A will fail and then data will be
+lost
+For the first case, A disk is failed for 100
+hours every 100, 000 hours. so in order to Make B to for
+it will need 100, 00012/100 hours. Because the other
+Care, the time is reduced to 100,000 162 100)
+3.
+Advantage
+pata retrieval: computer- based system provide
+enhanced data reterenal techniques to retrieve data
+stored in files in easy and efficient way.
+Editing
+It is a easy to edit any information stored
+in computers in form of files. specific application programs
+or editing software Can be used for this purpose.
+Disadvantage
+* Data redundancy It is possible that the
+information May be duplicated in different in files.
+This same Leads to data redundancy results memory
+mastage
+pata inconsistenty Because of data redundar
+it is possible that data May not be in consistant star
+5.
+Map database Management system are software
+programs designed to efficiently store and recall
+spatial information They are widely used in localization
+and naurigation, especially in automotive applications. They
+are playing an increasingly important role in the
+emerging areas of location - based services, active safety
+function and advanced driver - assistance systems
+common to these functions is the requireMent for
+Clus on - board Map database that contains information
+describing the road network
+2.
+Database indexing Hash tables May also be used
+as disk - based data structures and database
+indicas (such as in dbM) although B- trees more popular
+in these applications in Murlt:- - node database system
+hash tables are commonly used sto destribute rours
+amongst nodes, reducing network traffic
+enobles restrictions to be placed on reuse To of
+4.
+mysol placed on reuse of previous passwords. establish history
+password. be - reuse policy globally, use the password
+and password. reuse- internal system variables

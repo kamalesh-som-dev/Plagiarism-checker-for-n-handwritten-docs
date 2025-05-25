@@ -1,0 +1,238 @@
+
+IT18303 - Database systems
+It
+CAT-03
+2127200801072
+b)
+Deadlock prevention may result in ancessary waiting
+and roll back
+The main prestom in distributed system is deciding
+how to maintain loat for -grapts
+Common fachiques for dealing with this issue require
+that each site keepa local wait-to graph
+The nodes of graph Corresponds to all transactions that
+currently either holding or requesting any of the items
+local to the site.
+T2
+T2
+TA
+T,
+T3
+Ts
+T3
+Site S2
+Site S1
+focal Wait for graphs
+1
+& Whena transaction To on site S1 needs a resource
+in site S2 1 it sends a request message to sib S2.
+If the response is held by transaction Tj the
+system reserts a edge Ti Tj inthe local Docet for
+graph of sit S2
+In the above diagram, Each wait-for graph is
+acyclic neverthiless a deadlock elects in system
+because the levion of local wait -too graphs Contains
+a cycle.
+T1
+T2
+T4
+T3
+T3
+Global wait for graph
+In centralized deadlock detection approach system
+construets and maintains a global Wast for graph
+Canion of all local graphie)
+2
+The real graph describes the read but unknown
+State of system at any instance in time.
+the Constructed grapts is on apprecinitation generated
+by the Controller
+Controller must generate the Constructed gragh whenever
+detection algorithm is invaked
+The global wait for graph can be excounted or
+upolated based ou these conditions
+whenever a new edge is inserted in or removed
+focus one of the local-hait for graphic
+priorically, when number of changes have occured
+in a local-wait for graph
+whenever Coordinator needs to invoke cyde detection
+algorithm
+when the Coordinator invokes deadlock detection algorithm
+it searches its global graph
+If it finds a cycle, selects a Victim to be relled
+backed,
+3
+The Co-ordinator west modify all the sites, that
+particular transaction has been selected as victim
+the sites in turn, roll back the vectim transactions.
+9
+the scheme may produce rollbacks if false
+cycles elist in global wait for graph.
+T1
+Tr
+T2
+73
+S,
+S2
+T1
+Is
+T2
+Coordinator
+suppose that T2 releases the resource that is Tz holding in
+in site 8, resulting in deletion of edge Ti
+St
+Transaction To then requests a resource hold by T3
+in
+at site S2, reulting in addition of edge T2 . T3
+I2
+a
+If the insert To
+Ts message from S2 arrives
+before the remove F 72 message from $1,
+the Co-ordinates may discover false cigcle T, To 273
+after the insert
+Dead lock recovery way so initiated, although no
+deadlock has occured
+of deadlock has indeed occured and a lectim as been
+picked, while oue of transaction was aborted for
+reasons unrelated to deadlock.
+to Al the Same time the co-ordinator discovered a
+suppose that 8it S1 decides to about has T2.
+cycle, and has picked T3 as victim.
+Both T2 and Is are NOW rolled back although T2 needs
+A
+to roll Sacked
+5
+7)
+Foult tolerant Services Using Replicated state beachives
+a
+key requestment is make a Service facebo falorant
+state macheries are powerful approach to
+creating such Services
+A state macherie has a stored state and receive
+stake inputs state transitions ou each input and may output
+some results
+Transitions and outpute must be detormeristic
+A equicated state wachine is a state machine that
+is reeplicated ou weelingle uodes.
+All reepicas must get exactly same injies
+Even in some of the nodes fail 1 state and output
+can be obtained from other hodes
+6
+Replicated State machine
+Replicated state machine based on reaplicated log
+Secomple Commands assign Values to Variables
+client
+y&7
+Conserves
+Conserver
+Conseveres
+Module
+Modul
+Module
+hog
+Los
+Log
+1912/212
+xt3
+0012 2E2 x3 yea/yes
+(424/47)
+followers
+follower
+leader
+leader declares a log record commited after it
+is replicated at a majority of nodes.
+Updale of state machines at each cupica happens only
+after log wood has been commilled
+7
+Uses of deplocated state Maehes
+Fault-tolerant lock manager
+state: lock table
+operations: Cock requests and lock releases
+output grant or rollback requests on deadlock
+Centralized implementation is made fresh folesand
+by simply reversing it on a replicated state machine
+Fault- tolerant key-values store
+State: key value storage state
+operations: getc and puter are first logged
+is
+operations are executed when the log record
+in committed state.
+Google spanner uses replicated state machine to
+implement key-value store
+Data is partitioned, and each partition is replaced
+across multiple nodes
+to
+Replicas of on partition from Panos group with one
+node as leader.
+operations Initialed at leader, and replicated to other nodes
+8
+6)
+Challenges involved in answeing data Consistoncy
+(b)
+D Distributed Concernsure control:
+When data is shared among Various site, in case it
+data is updated or modified in one site it has to be
+tonly then database is said to consistent
+reflected in others.
+So, this integrity of database is maintained datafiase by specifying
+the synchronization of access to distributed techniques uses
+to concurrency different looking to data.
+based manage on mutual ouchusion of access
+Replication Control:
+Data might be inconsistent if the whole database stock piled or a
+percentage of it is copied and Copies are
+at dissimilar sites
+is
+more than one copy of a database, the issue evening
+*
+Conti Having neeing the Command uniformity of the and copus data
+with all copes are identical sehema
+We case englication technique for this purpose
+9
+Data might become in consistent be multiple
+users request data at same time
+9 This leads to Data Redendancy
+* To avoid this we lese locking peretocols and dead
+lock handling.
+Transparent Management :
+t
+The major problem is when data located database in homerous
+locations and number of users are used that
+so, transparent management of data is important
+maintain the integrity of distributed database
+Replication Latevey
+the th asynehromen application there will those short lagbetween
+changes to the source and derivery of change
+to target
+10
+D
+A disk is failed for 100 hours every 100,000 hours
+so in order to make st fail it 100 head
+2)
+B+ Trees Can be used to locate block containing the
+search key.
+We choose Bt free because it is a self belowing
+tree data structure that maintains data and allows
+Searchees, sequential access, insecutions and deletions
+3)
+Advantages
+Complex structures can be implemented through DBHS,
+thees Evereasing performance.
+simply the DBMS for backups
+Data Retrieved, Editing
+Dradvantages:
+increases the 8120 and completity of DSMS
+I May load to overloading
+Data Redendary inconstances
+&)
+Sportral I database is used
+Using squeeal database indening can be done and given
+business wele can be maintained
+"
+5)
+Destrobated database is a database in which data
+is stored across different physical locations.
+So to develop map we case distributed database
+Also are goospatral database
+a

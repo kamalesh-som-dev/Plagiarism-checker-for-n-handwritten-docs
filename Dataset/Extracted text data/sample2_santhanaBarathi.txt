@@ -1,0 +1,299 @@
+
+Database Systoms
+2127200881076
+TB 22
+cat-III Subcode IT13365
+Part-C
+8)
+b)
+Deadlock handling
+Dead lock prevention may result in
+unnecessary waiting and roll back. Furthermore,
+certain deadlock -prevention techniques May
+required more site to be involved in the
+environment execution of a transaction than
+would otherwise be the Case
+If we allowed deadlocks to occur and
+velay on deadlock detection, the Main problem
+in a distributed system is deciding how to
+maintain the wait for graph
+2
+T2
+4
+To
+T3
+5
+3
+sites,
+sites,
+Common techniques of doalings with this
+issue require that each sit keep a local
+wait - Br graph.
+* The nodes of the graph correspond
+to all the transactions that are
+currently either holding or requesting any
+of the items local to that site
+T
+T2
+T-S
+T4
+Ta
+5
+3
+is
+depicts a system consisting of thosis
+for maintaining its local wait for graph.
+T2 and T3 appear in both graphs, indiating
+that the transaction have requested item
+at both sides
+3
+These local wait for graph are
+constructed in the usual manner for
+local transactions and da iteus
+R when a transaction T, on site S, heads
+a resource in site S2, it send S2, it sends
+a request Message to site S2.,IF the
+resource is held by transaction TJ. the
+system insorts an edge Ti Tj in the
+local wait for graph of site S2.
+the controllized dead lock delation
+approach the systam Constructs and
+Maintains a global wait - for graph in a
+single site The dead lock. - detection
+coordinator.
+of since there is communication delay in
+the system we must distinguish between two
+types of wait- for exaphs.
+4
+I the real grouph describes the real but
+unknown stado of the syctom at any
+instance in time, as would be seen by an
+amniscient observer.
+5
+13
+4.
+S,
+S2
+G
+5
+3
+Goordinator
+whonever a new edgle is inserted in
+or removed from one of the local wait
+for graph
+Periodically , when a number of changes
+have occurred in a local wait for graph
+5
+xwhenever the coordinator needs to invoke
+the cycle delation algorithm.
+when the Coordinator invokes the deadlock
+detection algorithm it search has
+been selected as victim.
+This shane may produce roll backs if:
+False cycles:
+& It exist in the global wait For grouph
+As an illustration I Considered a snapshot of
+the system represented hy to local wait-for
+grouph The T2 relogas the resource that it
+is holding wh site S1, resulting in the deletion
+of the edgo T, - Tz in S1.
+t A dead lock has inded occured and
+a victim has been picked, while one of the
+transactions was aborted For reason unrelated
+to the deadlack
+*Both T2 and T3 are now rolled
+back although only T2 needed to be
+rolled back
+He Dood lock detection Can be done in a
+distributed manner with several sites
+taking on parts of the task , instadd of
+its being done at a siab site
+R the however, such algorithms are more
+complicated and more exepsive.
+Part-B
+b)
+Challenges in maintaining Data Consistancy.
+Data discrepanced occrs when the data
+in the target database daiates Form the
+sourse database. The exetent to which the
+data derivate depends on various factors, some
+of which you be intecled and other unitended
+7
+Lift E shift work load to cloud
+since the world is Moving towards
+cloud , the lift & shift work lead from
+on - Premises to cloud is the Good of today's
+IT world.
+Differences in source and tarent
+Differnes in / source and target
+dateshase configuration.
+g locales, Indianness or database
+Instrantion Errors:
+Before Migration or replication can
+begin the target database (s)weil need
+to be instratiated with the Correct
+schoma and Contraints. failure to doso
+will rouet in the Source and targe at being
+out of sync.
+of
+Configuration essors
+Improper and unintended configuration
+of repliction products can cause discropancies.
+This mou present Q A look from delative
+to issues as world
+Requirements for nonagalya Data consistency
+high speed low impact dats
+support for hotorgelling data bases
+minimally intrueivo
+* Jero dountime of Source and larget
+x capability le ident detainconsistancy
+R low import on hardware and wellwark
+Data socially
+Fars to use understand, Configure,
+deplay and diagnose
+9
+a)
+Fault - tolerant services
+key requirement: make a Service Fault tolerant
+eg: lack Manager, Key valuestorago system
+# state machines are a powerful aproach
+to creating such services
+state machine
+& Has a stored state, and receives inputs
+to Makes state transitions on each input,
+and may output some results
+deterministic
+go Transitions and output must be
+replicated state machine
+It has multiple nodes
+a Replicated lag state sachine process
+only committee inputs
+8 Even if some of the nodes fail, state
+and output can be obtained from other nodes.
+to
+M Peplicated state machine based on
+replicated log
+* Trample commands assign values & variable
+Dian
+Hef
+Consonio
+the
+3
+Casonas
+ve
+3
+Girrcus
+Modully
+47
+Madula
+of
+rodub
+44
+23
+23
+3
+lops
+Follower
+Bloves
+Heador
+leader declara by record committed after
+it is replacated at a majarity of rodes,
+update of state Machine at sach vedica
+happens only after bg records has been
+committed
+of
+Replicated state machines Can be used
+be implement wide variety of services
+11
+R Inputs can specify operations with
+Parameters
+R
+But operations Must be deterministic
+t Rosult of operation can be sent from
+any replica
+gots executed only when be record
+is committed in replicated lag
+usually sent form lader which knows
+which part of be is committed
+Eg: Fault - lack manger
+state = lock table
+go operations lock vea usts and locareloss
+output grant , or roll back requestes
+on dead lock
+12
+Fg: Fault talerant Very valio store
+state voys-valio storage S tate
+operation got C) and Putcs are first
+lagged
+& operation S exceeded when the log records
+in committed state
+Gmale spanner uses replicated state
+machine to imploment Rev-value spece
+Replicas of a partition form a Paueas
+group with one node as leader
+operations initiated at bader,
+and replicted to other nodes
+Parl A
+For the two disk mirored case we assume A
+disk and B DISK. It order to lose data, A
+and B need to be failed at the same timo if
+A is alleaded and with in 100,000 hours
+B disk RS will fail, then datawill be last
+The O ther case is B is alloady failed and
+within 100,000 hours A will Fail and then data
+will be lost
+for the first call , 1 Disk is failed for
+100 hours every 100,000 hours. So in order to
+Male B to Fail if will weed 100,00012/
+100 hours, Because the other care the time is
+reduced to
+2)
+Pata base indexines
+Mash tables May also be used as disk -
+based data structures and database indices
+although B- trees ale more popular in these
+applications. It Multi -nade databosesystems,
+hosh tables are commonly used to distribute
+rows amongst nades, reducing network happic
+for bash joins.
+3
+Advantage
+Disadvantage
+Data retrival.
+Data Redundancy
+Computor- based
+It is possible that
+systems povide enhanced
+the same information
+data retrieval technique
+May Joe duplicated
+to retrieve data
+in different files
+stored in Files ineasy
+this leads to data
+and efficient way
+redundary results in
+Editing
+Memory Wastapic
+It is Day to solit
+Data inconsistency
+any information stored in
+Because of data
+redundancy, it is
+Computers in Form of files
+Possible that data
+may not bo in
+Consistent stato
+5
+Map database Management.
+systers are Doftware programs dosing ned
+le efficiently store and roall patral information
+than are widely weed in localization and
+radigation especially ) in automatic applications
+It plays important rate issued in the
+emerging areas of location- based service
+active safety Function and advanced driver-
+assistance systems. common to these Functions
+is the requirement for an on board Map
+database that contains information discubbing
+the road network.

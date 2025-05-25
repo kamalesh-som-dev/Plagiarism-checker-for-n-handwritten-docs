@@ -1,0 +1,454 @@
+
+Name: Kamalesh's
+Regn. No: 2127200801040 Subject: Datahas System
+Section: A Branch: Information Technology
+Assignment-
+a
+1) Let r(z) & WCZ) denot read & write operations respectively or a data
+item 2 by a transaction T. consider 2 schedule:-
+SI: ricx) ricy) r2cx) r2(y) W2CY) WILX)
+628 ri(x) r2cx) rily) WZLY) ricy) WICX)
+which schedule is conflict sevilizable how?
+Sol:
+52 is conflict serializable This is because the transaction sens
+of S2 looks like This
+T,
+TL
+1(x)
+r(x)
+rcy)
+w(y)
+n(4)
+wcr)
+T1
+T2
+relation RCP, Q, S, Tjx, y, 2,w) with following functional depends
+2)
+Consider the
+cies PQ xf, P yx, Q Y , Y ZW. consider the decomposition of Relation R
+into the relations D1= {PQST ! 3, EPTX 3, {Q,Y3,EY2W3
+D2 = {P,4,53 ,{T,x3, {Q, Y} ,{y,2, w3 a Identify the type of
+Sol:
+D1 is a lossless decomposition, ,but D2 is a lossy decomposition.
+decomposition Clossy / passless Justing
+Di: R= {PQST?, (PTX), (QY), (Y2w)3
+Take R,CQQST) & R2( PTX) , common attributes are PT & PT TX
+R1 (PQST x) R21QY
+R, (PQSTXY)
+Relation becomes R, (PQST xy) (42w)
+athibute
+is
+Y
+&
+its
+hey
+to
+K2.
+Havu, common all attibutes got Combinal into One relation & Lance this decomposition
+is lossless.
+D2: R [(P,Q,3), (Q,Y), ( 7,2,w)]
+In
+relation
+(TX)
+its
+athibite
+is
+not
+COMPON
+to
+the
+fun it NJ combine
+Blue
+R,CP,Q,S,Y,
+2,
+w)
+(T,X)
+, still
+Ag
+conson
+athibutes
+:
+this
+decomposition
+is
+lossy
+3)
+Suppose
+following
+functional
+dependency
+hold
+on
+relation
+U
+with
+a
+athibutes P, Q,K,S,T.
+P-QR
+RS-ST.
+what
+FD
+car
+be
+infered
+from
+above)
+explain
+Sol:
+PS
+T
+DATE P-7R
+There
+are
+the
+infered
+FDS.
+PS-Q
+From
+P
+QR,
+derive
+P-Q
+NI
+can
+&
+P7R
+P-7R
+PS
+T
+P7Q
+PS
+Q
+4)
+consider
+the
+Schedule
+of
+3
+transactions
+R2(4) R,CX) R3(2) RICY) WICX) R2C2) W2CY) R3(x) w3(2) Is this schedule a
+conflict saializable.
+Same
+effect
+as
+a
+Sol:
+for
+conflict
+serializability
+of
+schedule
+(which
+a
+gives
+social
+schedule)
+we should check for conflict operations, which are Read- write,
+write - Read W write -write between each pair of transactions, & based on their
+we
+make
+procedence
+graph,
+if
+graph
+contains
+a
+cycl
+its
+not
+a
+,
+conflicts
+a
+conflict serializable schoclub.
+conflicts
+w,Cx) (RCX)
+RL(2) w3(2)
+w, (x)
+R2
+(2)
+W1
+(y)
+R3
+(x)
+w3(2)
+R, (x)
+R2
+(y)
+R3(2)
+R,CY)
+W,
+(x)
+R2
+(2)
+W2
+(y)
+R3
+(x)
+W3
+(2)
+(,(x)
+R,
+(4)
+R3(tZ)
+R2
+(2)
+W2
+(4)
+R3
+(x)
+W3
+(2)
+R,(x)
+R,YY
+w,(x)
+(x)
+R2(2)
+W2LY)
+R3C2)
+R3(x)
+W3
+(2)
+R,CV)
+R,LY)
+is
+camplic
+serilazable
+of
+T
+T2
+T3.
+Justify the following Statements.
+shirt 2PL probool generates conflict sevilized schodules that as also recommable
+Timestamp ordering concerning pictural with Thomas write ruls 161 greats
+view seriable schedule that are not conflict sevalyable
+Following shill 2-PL ensures that our schedule is: serizibility, recoverable
+&
+Sol:
+Thomas cascadeless. while rule control does not enforce conflid serializability.
+In 2PL, transactions for do community not release exclusive locks until The transaction
+Time has Schedule with Thomas write rub generate view 6 serial
+commited or aborted ,i.e schodule is recoverable.
+Schedule stap with ordering blind write because of blind write, it won't conflict
+serial.
+6)
+F= (QR-) S, ,R-P, S Q } hold on a relation scheme schemas where
+X7 Jot PQRS the F.D is not in BCNF Suppose X is decomposed into BCNF? 2 Y-FR
+x Z = QRS comment on decomposition Is YEZ in
+adidas XCPQRS) & , R7 P, Q 3 is de composed into YLPR? 2 QCQRS)
+Sul:
+>7
+Y(PR)
+2 (QRS)
+QR-75
+R-7P
+S7Q
+cardinal ley: R
+Rolation Y 5 in BCNF
+candidate her! {Q1, RS}
+Relation 2 is in 3NF but not BCNF C:.S is not super hay).
+7) consider the schema with non- trivid F.D
+(i) Registration (Rouno, consid, email)
+(ii) Adlro, coussid email
+(iii) email 10Hno.
+Justify wrother schema is in 3NF & in BINF.
+Sol:
+Since { rollins, coursid is primary key so 1011 ro & consid all prime thibutes. email
+is non- prim athlibute
+FD
+roll N, consoid email is in BCNF & 3NF but FD email rolho violates the
+rule of BINF because email is not superkey But it satisfies rub of 3 NF because
+rollno is prime athibate.
+50, overall this relation is in 3NF but not in BCNF.
+8)
+A database of research articles in a journel uses the following Schoo
+(volume, Number, startpay, end pay, like, you, price , The primary key is (Udars,
+Startpage, addage) & 120 following FD exist in the schema. (Volins, Number
+standpage endpag ) Title (volume, number year ( volum, Number, stadpay, ending >se
+The database is redesignal to we the following schemas. (Volume ,Number
+endonge, title , hice ) (Volume, Number, year). which is the watest name form
+that the new database satisfies ,but old on does not?
+Sd:
+Old relation has functional dependency : Volume, Number you as partial depending So
+But ,there is no partial dependency in the Now relation & so it satisfies ONE
+it does not follow aNF
+as well as 3NF
+Thaefor, aNF is the weakest normal form that to NW databas satisfies,
+but old one does not
+9)
+Consider following 2 please locking protocol Suppose a transaction T accesses
+for read on write operations) a certain set of objects {01, 03. consider
+the following 2PL protocol Suppose a transaction T accesses (for read /write
+operations), a certain set of abjuts O. IX This is done in following maam
+Step T acquires exclusive locks to 01 on in increasing order of his address
+Step2: The reqd operations as performed.
+Stop3: An books are released 4.
+This is dono in following manner. car deadloch occur? does transaction
+achieve serilizability.
+Sul:
+The above transaction scenario is consavative 2PL. In conservative 2PL protocol,
+transaction has to loch all the items it access before the transaction begins
+execution a . It is used to avoid deadlocks Also 2PL is conflid sevalizable,
+therefore it guarantees serilizability.
+10)
+consider a schodule of transactions T, & T2:
+WB commit
+T1 RA
+RL
+WD
+commit
+T2
+RB
+WB
+RD
+we
+Hew RX stands for Read UX) & WX stands for wex wit its complict
+equivaled schedule.
+Sol:
+RA RC WD WB
+Commit
+T,
+we
+commit
+T2 RB WB RD
+transactions
+T,
+€
+T1
+as
+green
+as
+To silk, NICO, SICY), WILY)
+71: ALLY), willy), 1((2) ,WE(Z)
+Find
+120
+total
+of
+confide
+smilalizeble
+schodule
+brand
+by
+7,
+&
+Try
+no
+st
+In 11 conflicting operation Aicy) & wily)
+In T2, conflicting operation 12(4) &
+:
+only
+ON
+way
+to
+T,
+72
+For T2
+we have 5C1 15C2 + 411 1912 + 3414362
+T1,
+6
+is
++
+10
+&
+=7 53
+:
+total
+no
+of
+conflict
+serifazable
+schedula
+are
+5311
+=
+54
+T,
+U,V,W,
+x,
+4,20
+&
+FD
+=
+{
+PQ-7,
+P
+relation
+ST,
+Q-10,
+12)
+given
+a
+RCP,Q,R,S,
+convert
+into
+3NF
+whether
+given
+R
+is
+in
+3NF?
+If
+not
+it
+S
+x
+y3,
+detains
+R3 is not in 3NF
+Sol:
+F.D : {
+PQ -R
+21
+R3' CQU) ,R3" UVW)
+P-) ST
+Q
+U
+No w this is in 3NF
+V VW
+}
+R4 is in 3NF
+S-> XY
+PQ+ = PQRSTUVWXY
+decomposed relation is
+>) candidate key = PQZ
+P,CPQR) R2 (PST) R2" (SXY),R'CQU)
+Prime attribute P,Q,2
+R3" (UVW) Rn (2).
+Non-prime athibute = R,S,T,U, v, W, X, Y, 2
+PQ
+R,P
+ST, Q-> U violates 2NF
+first,
+SQ
+as
+to
+make
+it
+3NF
+to
+make
+it
+2NF
+R,CPRR)
+REPORT re weart) , R2 PST#Y),R3CQUVW), Ru(2)
+Now This is in 2NF
+for 3 NF , it should be super hey
+R1 R2 is not in in 3NF 3NF , ginter R2' (PST) , ,R2" (SXY)
+is with PO as super My
+RMB
+Now
+R2
+&
+R2"
+all
+in
+3NF
+with
+P
+&
+S
+as
+super
+my

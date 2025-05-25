@@ -1,0 +1,226 @@
+
+(AT-III
+Name: G. Navina
+Branch: IT - B
+Regno: 2127200801059
+Subcode: IT18305
+Subject Database system
+name
+Part - C
+8b)
+The deadlock - prevention and deadlack-detection
+algorithm can be used in distrubed system,
+provided that modification are made.
+Deadlack prevention may result in unnecessary
+waiting and rollback If we allow deadlacks to
+occur and rely an deadlock detection the main
+problem in a disturbed system is deciding
+how to maintain wait-for-graph
+Common technique for dealing with this issue
+require the each site keep a local wait for graph
+the nodes of the graph correspond to all the
+2
+transaction that are currently either holding or
+requesting any of the items local to that site
+T,
+T
+3
+T2
+,
+4
+T5
+T3
+T3
+Eg:- The above system consisting of 2 sites
+each maintaining its local wait for gaph
+Note that transaction T2 and T3 appear in bath
+graphs, indicating that the transaction have
+requested X2 6 requested items at both sites
+These local wait for graph are constructed
+in the usual manner for local transaction
+and datailems. when Transaction T; an site
+S, needs a resource in sites, it send a
+request message to site S2 If the resource
+is both held by transaction Tj. then system
+inserts an edge Ti Tj in the local wait for
+3
+graph site S2 .
+Each wait for graph is acydic ; novertheless a
+deadlock exist in the system because the union
+of the local wait-for graphs (centains a cycle
+In the centralized deadlock detection approach
+the system constructs and mountans a a global
+Wait for graph un a single site, the deadlack
+detection coordinator. since there is communication
+delay in the system we must distinguish between
+the 2 types of wait for graph
+The global wait -far graph can be reconstructed
+as updated under these conditions :-
+A whenever a new edge is inserted in or
+removed from ane of the local wait for graph
+& Periodically when a number of changes have
+occured in a local wait for graph
+4
+whenever the loar dinator needs to invoke the
+cycle - detection algorithm
+when the caardinator invokes the deadlach detection
+algorithm, it hearches its glob al graph If it finds
+a cycle, it selects avictim do be rolled bach The
+coordinator must notify all the sites that a
+particular transaction has been selected as victim
+and sites, / in turn roll back
+False cycles :-
+It exist in the global wait for graph. Suppose that
+T2 releases the resource that it is halching in
+site S, resulting in the deleticen of edge T, T2
+in S,
+-7
+Transaction 72 then requestes a resource held by T3
+at the rtsr sites2 resulting in the additi an
+of edge T2 T3 in S2
+If the insert T2 T3 message from S2 arrives
+before the remove T, T2 message froms,
+5
+the Laardinatar may discover the false cycle
+T1
+T2
+T3 after the insert Deadlock recovery
+may be initiated although no deadlock has
+accured
+T
+1,
+T1
+1
+I2
+3
+T
+S2
+2
+T3
+SI
+coordinator
+Part- B
+6 (b)
+challenges in maintaining Data consistency:-
+Data discrepancy occurs when the data in the
+target database deviates from the source database
+Same potential cause of data discrepancy:-
+Migration error:
+Different kinds of migration toots are employed
+to facilitate the initial lead of the target database
+before replication begins
+6
+Lift & shift workload to cloud ber
+Difference in source and target ie Difference in
+source and target database configuration
+Instantiation error, before migration or replicati an
+can begin the target database
+will need to be instantiated with correct schema
+and constaints, failure to do. so will lead to
+saurce and target being out ofsyne
+configuration error improp es and unintended
+configuration of replication products can cause
+discrepancies
+Gaps in replication
+Replication latency
+user error, application error
+Requirements for managing data consistency
+High speed law impact data comparisons
+7
+a
+support far heterageneaus database
+capability far handling large data volumes
+Minimal intrusive
+Suppor far love database with constantly
+changing dat a
+Flexible options for managing data compariscess.
+Part-c
+7(a)
+Fault - Tolerant services wing Replication state
+machines
+key requirement td make a service fault tolerant
+eg:- lack manager, key value storage system.
+state machines are a powerful approach to creating
+such service
+A state machines
+has a stared state, and receives inputs
+Makes state transitions on each input and
+may output some results
+8
+Transitions and output must be determinists
+A replicated state machine is a state machine
+that is replicated an multiple mades
+x
+All replicas must get exactly the same input
+Replicated lay! state machine processes anly
+committed inputs
+Even if same of the madesfail state and output
+can be obtained from other nades.
+Replicated state machine :-
+liss t
+ye?
+consenses
+x 3
+module
+x3
+y 7
+x3
+y7
+loy
+J7
+23
+Z 3
+Log
+23
+XE2 XL2
+YEL
+YEY
+xt2 x t2 y-3
+yky
+xt2
+leader
+follower
+follower
+9
+Replicated state machine based on replicated bey
+Example command assign values to variables
+Use of Replicated state machines
+Imperbs can sy
+Replicated state machines can be used to
+implement wide variety of services
+Input can specify aperations with parameter
+to operations must be deterministic
+Result of operation can be sent from any replica
+example :- Fault - talerant lack manager
+State : lack table
+operation lack requests and lock releases
+& output grant, as ralback requests an deadlack
+centralized implementation is made fault
+tolerant by simply running it on a replicated
+state machine
+Fault telerant key value store
+&
+state : key - value storage state
+10
+operation get 11 and put 11 are first logged
+Gaagle spanner uses replicated state machine to
+implement key-valu stare
+Part - A
+3]
+Advantages of staring multiple relation in single file
+complex structures can be implemented through
+the DBMS , thus increasing performance
+Dired Disadvantages :-
+A
+Increases the size and complexity of the DBMS
+5]
+Map database management system are software
+programs designed to efficiently store andrecall
+spatial in formation Used in localization
+and of automative localization especiall in
+automatin applications
+1]
+Mean time to failure of dist A is 1,00,000 Shows
+time to repair is 10 hours gives mean time to
+data loss of 500 X 106 hours or 57000 yars for
+a mirrared pairs of disks

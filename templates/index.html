@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Text Extractor</title>
+</head>
+<body>
+
+<h1>PDF Text Extractor</h1>
+
+<form method="POST" action="/" enctype="multipart/form-data">
+    <label for="pdfFiles">Upload PDF file(s):</label>
+    <input type="file" id="pdfFiles" name="files[]" accept=".pdf" multiple required>
+    <!-- Use 'multiple' attribute to allow multiple file selection -->
+
+    <br>
+
+    <button type="submit">Extract Text</button>
+</form>
+{% if similarity_matrix %}
+    <h2>Similarity Matrix:</h2>
+    <table border="1">
+        <tr>
+            <th></th>
+            {% for file in range(similarity_matrix[0]|length) %}
+                <th>file{{ file + 1 }}</th>
+            {% endfor %}
+        </tr>
+        {% for i in range(similarity_matrix[0]|length) %}
+            <tr>
+                <td>file{{ i + 1 }}</td>
+                {% for score in similarity_matrix[i] %}
+                    <td>{{ score if score is not none else "1" }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
+
+</body>
+</html>
